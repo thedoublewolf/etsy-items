@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (function () {
 
 //////////////////////////QUESTION 1////////////////////////////////
@@ -54,9 +53,10 @@
 
  	// take items in array and make it show up on page
 
-	var answer2 = document.querySelector('#answer2');
-	var textNode = document.createTextNode(specItems);
-	answer2.appendChild(textNode);
+ document.getElementById('answer2').innerHTML = specItems[0] + '<p>' + specItems[1] + '<p>' + specItems[2];
+	// var answer2 = document.querySelector('#answer2');
+	// var textNode = document.createTextNode(specItems);
+	// answer2.appendChild(textNode);
 
 //////////////////////////QUESTION 3////////////////////////////////
 
@@ -84,6 +84,4 @@
 //////////////////////////QUESTION 6////////////////////////////////
 
 }());
-=======
-function 
->>>>>>> master
+
