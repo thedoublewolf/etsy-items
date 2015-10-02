@@ -12,25 +12,25 @@
 	var prices = items.map( function (item){
 		return item.price;
 	});
-	console.log(prices);
+	// console.log(prices);
 
 	// Add all of the prices together
 	var sum = prices.reduce( function (prev, next){
 		return prev + next;
 	});
-	console.log(sum);
+	// console.log(sum);
 
 	// Divide by total number of items
 	var avg = sum / items.length;
-	console.log(avg);
+	// console.log(avg);
 
 	// Convert it to 2 decimal places
 	var converted = avg.toFixed(2);
-	console.log(converted);
+	// console.log(converted);
 
 	// Make it a string
 	var str = 'The average price is $' + converted;
-	console.log(str);
+	// console.log(str);
 
 	//Make it show up on the page
 
@@ -42,12 +42,20 @@
 	answer1.appendChild(textNode);
 
 //////////////////////////QUESTION 2////////////////////////////////
+ 	// Create a blank array to push filtered items into
+ 	var specItems = [];
+ 	// filter items that are priced between 14 and 18 and push into blank array
+ 	var filteredPrices = items.filter(function (filteredItem){
+ 			if ((filteredItem.price > 14.00) && (filteredItem.price < 18.00))
+ 				specItems.push(filteredItem.title);
+ 		}); 				
+ 		 		console.log(specItems);
 
+ 	// take items in array and make it show up on page
 
-
-
-
-
+	var answer2 = document.querySelector('#answer2');
+	var textNode = document.createTextNode(specItems);
+	answer2.appendChild(textNode);
 
 //////////////////////////QUESTION 3////////////////////////////////
 
