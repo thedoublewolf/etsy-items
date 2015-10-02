@@ -80,7 +80,7 @@ document.getElementById('answer3').innerHTML = gbpCodeItems[0] + ' costs' + ' &#
 
 var woodItems = [];
 
-var itemsWithWood = items.filter(function(woodItem){
+var itemsWithWood = items.filter(function (woodItem){
 		if ((woodItem.materials.indexOf('wood')) != (-1))
 			woodItems.push(woodItem.title);
 });
@@ -93,6 +93,17 @@ document.getElementById('answer4').innerHTML = woodItems[0] + ' is made of wood.
 
 //////////////////////////QUESTION 5////////////////////////////////
 
+var multMaterialItems = [];
+
+var itemsWithMultMat = items.filter(function (mat){
+		if ((mat.materials.length) >= (8))
+			multMaterialItems.push(mat.title);
+});
+
+console.log(multMaterialItems);
+
+document.getElementById('answer5').innerHTML = 
+	multMaterialItems[0] + ' has ' + multMaterialItems[0].length + ' materials:' + '<br>';
 
 
 
