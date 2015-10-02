@@ -78,31 +78,18 @@ document.getElementById('answer3').innerHTML = gbpCodeItems[0] + ' costs' + ' &#
 
 //////////////////////////QUESTION 4////////////////////////////////
 
-// var woodItems = [];
-
-// var filterItemMaterial = items.filter(function (materialItem){
-// 		if (materialItem.material = 'wood')
-// 			woodItems.push(materialItem.materials);
-// });
-
-// var filterWoodItem = woodItems.filter(function (materialItem){
-// 		if (woodItems.indexOf('wood') != 1)
-// 			 return woodItems.title;
-// });
 var woodItems = [];
 
-var filterWoodItems = items.filter(function (woodItem){
-			if (items.materials.indexOf('wood') != -1)
-			woodItems.push(items.title);
+var itemsWithWood = items.filter(function(woodItem){
+		if ((woodItem.materials.indexOf('wood')) != (-1))
+			woodItems.push(woodItem.title);
 });
 
-
-
-console.log(woodItems);
-
-
-
-
+document.getElementById('answer4').innerHTML = woodItems[0] + ' is made of wood.' + '<p>' + woodItems[1] +
+																							' is made of wood.' + '<p>' + woodItems[2] + 
+																							' is made of wood.' + '<p>' + woodItems[3] + 
+																							' is made of wood.' + '<p>' + woodItems[4] +
+																							' is made of wood.';
 
 //////////////////////////QUESTION 5////////////////////////////////
 
