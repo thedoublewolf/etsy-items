@@ -49,24 +49,54 @@
  			if ((filteredItem.price > 14.00) && (filteredItem.price < 18.00))
  				specItems.push(filteredItem.title);
  		}); 				
- 		 		console.log(specItems);
+ 		 		// console.log(specItems);
 
  	// take items in array and make it show up on page
 
- document.getElementById('answer2').innerHTML = specItems[0] + '<p>' + specItems[1] + '<p>' + specItems[2];
+document.getElementById('answer2').innerHTML = specItems[0] + '<p>' + specItems[1] + '<p>' + specItems[2];
 	// var answer2 = document.querySelector('#answer2');
 	// var textNode = document.createTextNode(specItems);
 	// answer2.appendChild(textNode);
 
 //////////////////////////QUESTION 3////////////////////////////////
 
+var gbpCodeItems = [];
 
+var filterItemTitle = items.filter(function (britishItem){
+		if ((britishItem.currency_code = 'GBP') && (britishItem.listing_id === 189187176))
+			gbpCodeItems.push(britishItem.title);
+});
+
+var filterItemPrice = items.filter(function (britishItem){
+		if ((britishItem.currency_code = 'GBP') && (britishItem.listing_id === 189187176))
+			gbpCodeItems.push(britishItem.price);
+});
+
+document.getElementById('answer3').innerHTML = gbpCodeItems[0] + ' costs' + ' &#163;' + gbpCodeItems[1];
 
 
 
 //////////////////////////QUESTION 4////////////////////////////////
 
+var woodItems = [];
 
+var filterItemMaterial = items.filter(function (materialItem){
+		if (materialItem.material = 'wood')
+			woodItems.push(materialItem.title);
+});
+
+// function woodItems.indexOf('wood'){
+// 	woodItems.filter(function (wood){
+// 		if (woodItems.material != -1;)
+// 			return false;
+// 		else
+// 	});
+// 	return woodItems.material;
+
+// };
+
+	console.log(woodItems);
+	console.log(woodItems.material);
 
 
 
