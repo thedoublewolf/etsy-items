@@ -63,12 +63,12 @@ document.getElementById('answer2').innerHTML = specItems[0] + '<p>' + specItems[
 var gbpCodeItems = [];
 
 var filterItemTitle = items.filter(function (britishItem){
-		if ((britishItem.currency_code = 'GBP') && (britishItem.listing_id === 189187176))
+		if (britishItem.currency_code === 'GBP')
 			gbpCodeItems.push(britishItem.title);
 });
 
 var filterItemPrice = items.filter(function (britishItem){
-		if ((britishItem.currency_code = 'GBP') && (britishItem.listing_id === 189187176))
+		if (britishItem.currency_code === 'GBP')
 			gbpCodeItems.push(britishItem.price);
 });
 
@@ -78,25 +78,27 @@ document.getElementById('answer3').innerHTML = gbpCodeItems[0] + ' costs' + ' &#
 
 //////////////////////////QUESTION 4////////////////////////////////
 
+// var woodItems = [];
+
+// var filterItemMaterial = items.filter(function (materialItem){
+// 		if (materialItem.material = 'wood')
+// 			woodItems.push(materialItem.materials);
+// });
+
+// var filterWoodItem = woodItems.filter(function (materialItem){
+// 		if (woodItems.indexOf('wood') != 1)
+// 			 return woodItems.title;
+// });
 var woodItems = [];
 
-var filterItemMaterial = items.filter(function (materialItem){
-		if (materialItem.material = 'wood')
-			woodItems.push(materialItem.title);
+var filterWoodItems = items.filter(function (woodItem){
+			if (items.materials.indexOf('wood') != -1)
+			woodItems.push(items.title);
 });
 
-// function woodItems.indexOf('wood'){
-// 	woodItems.filter(function (wood){
-// 		if (woodItems.material != -1;)
-// 			return false;
-// 		else
-// 	});
-// 	return woodItems.material;
 
-// };
 
-	console.log(woodItems);
-	console.log(woodItems.material);
+console.log(woodItems);
 
 
 
