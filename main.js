@@ -64,15 +64,11 @@ var gbpCodeItems = [];
 
 var filterItemTitle = items.filter(function (britishItem){
 		if (britishItem.currency_code === 'GBP')
-			gbpCodeItems.push(britishItem.title);
+			gbpCodeItems.push(britishItem);
 });
 
-var filterItemPrice = items.filter(function (britishItem){
-		if (britishItem.currency_code === 'GBP')
-			gbpCodeItems.push(britishItem.price);
-});
 
-document.getElementById('answer3').innerHTML = gbpCodeItems[0] + ' costs' + ' &#163;' + gbpCodeItems[1];
+document.getElementById('answer3').innerHTML = gbpCodeItems[0].title + ' costs' + ' &#163;' + gbpCodeItems[0].price;
 
 
 
@@ -86,10 +82,10 @@ var itemsWithWood = items.filter(function (woodItem){
 });
 
 document.getElementById('answer4').innerHTML = woodItems[0] + ' is made of wood.' + '<p>' + woodItems[1] +
-																							' is made of wood.' + '<p>' + woodItems[2] + 
-																							' is made of wood.' + '<p>' + woodItems[3] + 
-																							' is made of wood.' + '<p>' + woodItems[4] +
-																							' is made of wood.';
+	' is made of wood.' + '<p>' + woodItems[2] + 
+	' is made of wood.' + '<p>' + woodItems[3] + 
+	' is made of wood.' + '<p>' + woodItems[4] +
+	' is made of wood.';
 
 //////////////////////////QUESTION 5////////////////////////////////
 
@@ -97,19 +93,36 @@ var multMaterialItems = [];
 
 var itemsWithMultMat = items.filter(function (mat){
 		if ((mat.materials.length) >= (8))
-			multMaterialItems.push(mat.title);
+			multMaterialItems.push(mat);
 });
 
 console.log(multMaterialItems);
 
 document.getElementById('answer5').innerHTML = 
-	multMaterialItems[0] + ' has ' + multMaterialItems[0].length + ' materials:' + '<br>';
-
-
-
-
-
-
+	multMaterialItems[0].title + ' has ' + multMaterialItems[0].materials.length + ' materials:' + '<p>'
+		+ multMaterialItems[0].materials[0] + '<br>' 
+		+ multMaterialItems[0].materials[1] + '<br>' 
+		+ multMaterialItems[0].materials[2] + '<br>' 
+		+ multMaterialItems[0].materials[3] + '<br>' 
+		+ multMaterialItems[0].materials[4] + '<br>' 
+		+ multMaterialItems[0].materials[5] + '<br>' 
+		+ multMaterialItems[0].materials[6] + '<br>' 
+		+ multMaterialItems[0].materials[7] + '<br>' 
+		+ multMaterialItems[0].materials[8] + '<p>' 
+	+ multMaterialItems[1].title + ' has ' + multMaterialItems[1].materials.length + ' materials:' + '<p>' 
+		+ multMaterialItems[1].materials[0] + '<br>'
+		+ multMaterialItems[1].materials[1] + '<br>'
+		+ multMaterialItems[1].materials[2] + '<br>'
+		+ multMaterialItems[1].materials[3] + '<br>'
+		+ multMaterialItems[1].materials[4] + '<br>'
+		+ multMaterialItems[1].materials[5] + '<br>'
+		+ multMaterialItems[1].materials[6] + '<br>'
+		+ multMaterialItems[1].materials[7] + '<br>'
+		+ multMaterialItems[1].materials[8] + '<br>'
+		+ multMaterialItems[1].materials[9] + '<br>'
+		+ multMaterialItems[1].materials[10] + '<br>'
+		+ multMaterialItems[1].materials[11] + '<br>'
+		+ multMaterialItems[1].materials[12] + '<br>';
 
 //////////////////////////QUESTION 6////////////////////////////////
 
