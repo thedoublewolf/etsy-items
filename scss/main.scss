@@ -4,18 +4,60 @@ $pink: #F6E5E5;
 $grey: #797981; 
 $ice: #EEEEEE;
 $black: #000000;
+// cool fonts
+$FjallaOne:'Fjalla One', sans-serif;
+$OpenSansCondensed: 'Open Sans Condensed', sans-serif;
 
 header {
 	color: $grey;
 	text-align: left;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
 }
 
 .container {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
+	background-color: $ice;
+	padding-bottom: 20px;
+	h3 {
+		font-family: $FjallaOne;
+		font-weight: 400;
+		color: darken($red, 20%);
+		display: table;
+		width: 98.5%;
+    white-space: nowrap;
+    &:before, &:after {
+      border-top: 1px solid lighten($grey, 20%);
+      content: '';
+      display: table-cell;
+      position: relative;
+      top: 0.5em;
+      width: 45%;
+    }
+    &:before { right: 1.5%; }
+    &:after { left: 1.5%; }
+	}
+	p {
+		padding-left: 40px;
+		padding-right: 40px;
+		// font-family: $OpenSansCondensed;
+		// font-weight: 300;
+	}
 }
 
 .banner {
 	width: 100%;
+	padding-bottom: 20px;
+}
+
+footer {
+	background-color: $black;
+	color: $ice;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	text-size: 0.5em;
 }

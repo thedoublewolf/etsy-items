@@ -29,7 +29,7 @@
 /////////////////////////MMXV JW./////////////////////////
 
                                              
-(function () {
+(function () { 
 
 //>>>-----------------------ANSWER 1----------------------->>>//
 
@@ -65,8 +65,18 @@
  				specItems.push(filteredItem.title);
  	}); 				
  	// take items in array and make it show up on page
-	document.getElementById('answer2').innerHTML = specItems[0] + '<p>' + specItems[1] + '<p>' + specItems[2];
-	var textNode = document.createTextNode(specItems);
+	var answer2a = document.querySelector('#answer2a');
+	var textNode0 = document.createTextNode(specItems[0]);
+	answer2a.appendChild(textNode0);
+	var answer2b = document.querySelector('#answer2b');
+	var textNode1 = document.createTextNode(specItems[1]);
+	answer2b.appendChild(textNode1);
+	var answer2c = document.querySelector('#answer2c');
+	var textNode2 = document.createTextNode(specItems[2]);
+	answer2c.appendChild(textNode2);
+
+			// This used to be document.getElementById('answer2').innerHTML 
+			// but I changed it to figure out how to style auto-generated text from text nodes.
 
 //>>>-----------------------ANSWER 3----------------------->>>//
 
@@ -76,8 +86,7 @@
 				gbpCodeItems.push(britishItem);
 	});
 	document.getElementById('answer3').innerHTML = gbpCodeItems[0].title + ' costs' + ' &#163;' + gbpCodeItems[0].price;
-	var textNode = document.createTextNode(gbpCodeItems);
-
+	
 //>>>-----------------------ANSWER 4----------------------->>>//
 
 	var woodItems = [];
@@ -90,7 +99,6 @@
 		' is made of wood.' + '<p>' + woodItems[3] + 
 		' is made of wood.' + '<p>' + woodItems[4] +
 		' is made of wood.';
-	var textNode = document.createTextNode(woodItems);
 
 	//>>>-----------------------ANSWER 5----------------------->>>//
 
@@ -124,7 +132,6 @@
 			+ multMaterialItems[1].materials[10] + '<br>'
 			+ multMaterialItems[1].materials[11] + '<br>'
 			+ multMaterialItems[1].materials[12] + '<br>';
-	var textNode = document.createTextNode(multMaterialItems);
 
 	//>>>-----------------------ANSWER 6----------------------->>>//
 
@@ -134,7 +141,6 @@
 				sellerItems.push(made);
 	});
 	document.getElementById('answer6').innerHTML = sellerItems.length + ' were made by their sellers';
-	var textNode = document.createTextNode(sellerItems);
 
 }());
 
