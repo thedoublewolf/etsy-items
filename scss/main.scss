@@ -7,4 +7,15 @@ $black: #000000;
 
 header {
 	color: $grey;
+	text-align: left;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.banner {
+	width: 100%;
 }
