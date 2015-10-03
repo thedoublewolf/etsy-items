@@ -96,7 +96,6 @@ var itemsWithMultMat = items.filter(function (mat){
 			multMaterialItems.push(mat);
 });
 
-console.log(multMaterialItems);
 
 document.getElementById('answer5').innerHTML = 
 	multMaterialItems[0].title + ' has ' + multMaterialItems[0].materials.length + ' materials:' + '<p>'
@@ -125,6 +124,15 @@ document.getElementById('answer5').innerHTML =
 		+ multMaterialItems[1].materials[12] + '<br>';
 
 //////////////////////////QUESTION 6////////////////////////////////
+
+var sellerItems = [];
+
+var itemQuantity = items.filter(function(made){
+		if (made.who_made === "i_did")
+			sellerItems.push(made);
+});
+
+document.getElementById('answer6').innerHTML = sellerItems.length + ' were made by their sellers';
 
 }());
 
