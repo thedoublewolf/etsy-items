@@ -7,33 +7,38 @@ header {
   font-size: 1.5em;
   font-family: "Pacifico", cursive; }
 
-.container {
+#container {
   width: 100%;
   margin: 0 auto;
   text-align: center;
   background-color: #EEEEEE;
   padding-bottom: 20px; }
-  .container h3 {
+  #container h3 {
     font-family: "Fjalla One", sans-serif;
     font-weight: 400;
     color: #900f00;
     display: table;
     width: 98.5%;
     white-space: nowrap; }
-    .container h3:before, .container h3:after {
+    #container h3:before, #container h3:after {
       border-top: 1px solid #adadb3;
       content: '';
       display: table-cell;
       position: relative;
       top: 0.5em;
       width: 45%; }
-    .container h3:before {
+    #container h3:before {
       right: 1.5%; }
-    .container h3:after {
+    #container h3:after {
       left: 1.5%; }
-  .container p {
+  #container .list {
+    list-style: circle; }
+  #container p {
     padding-left: 40px;
-    padding-right: 40px; }
+    padding-right: 40px;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 300;
+    font-size: 1.2em; }
 
 .banner {
   width: 100%;
@@ -42,7 +47,7 @@ header {
 footer {
   background-color: #000000;
   color: #EEEEEE;
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 20px;
   text-align: center;
-  text-size: 0.5em; }
+  font-size: 0.5em; }

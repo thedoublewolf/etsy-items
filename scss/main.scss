@@ -19,7 +19,7 @@ header {
 	font-family: $Pacifico;
 }
 
-.container {
+#container {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
@@ -43,11 +43,15 @@ header {
     &:before { right: 1.5%; }
     &:after { left: 1.5%; }
 	}
+ .list {
+		list-style: circle;
+	}
 	p { 
 		padding-left: 40px;
 		padding-right: 40px;
-		// font-family: $OpenSansCondensed;
-		// font-weight: 300;
+		font-family: $OpenSansCondensed;
+		font-weight: 300;
+		font-size: 1.2em;
 	}
 }
 
@@ -59,8 +63,8 @@ header {
 footer {
 	background-color: $black;
 	color: $ice;
-	padding-top: 20px;
+	padding-top: 40px;
 	padding-bottom: 20px;
 	text-align: center;
-	text-size: 0.5em;
+	font-size: 0.5em;
 }

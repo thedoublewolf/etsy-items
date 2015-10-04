@@ -31,6 +31,9 @@
                                              
 (function () { 
 
+	// Find container element to apply styles to answers.
+	var container = document.querySelector('#container');
+
 //>>>-----------------------ANSWER 1----------------------->>>//
 
 	// Create an array of just the prices
@@ -59,87 +62,116 @@
 
  	// Create a blank array to push filtered items into
  	var specItems = [];
- 	// filter items that are priced between 14 and 18 and push into blank array
+ 	// Filter items that are priced between 14 and 18
  	var filteredPrices = items.filter(function (filteredItem){
- 			if ((filteredItem.price > 14.00) && (filteredItem.price < 18.00))
+ 			if ((filteredItem.price > 14.00) && (filteredItem.price < 18.00)){
+ 				// Push title of item into specItems array
  				specItems.push(filteredItem.title);
- 	}); 				
- 	// take items in array and make it show up on page
+ 				return specItems;
+ 			};
+ 	}); 			
+ 	// Take items in specItems array and make them show up on page 
 	var answer2a = document.querySelector('#answer2a');
-	var textNode0 = document.createTextNode(specItems[0]);
-	answer2a.appendChild(textNode0);
+	var text2a = document.createTextNode(specItems[0]);
+	answer2a.appendChild(text2a);
 	var answer2b = document.querySelector('#answer2b');
-	var textNode1 = document.createTextNode(specItems[1]);
-	answer2b.appendChild(textNode1);
+	var text2b = document.createTextNode(specItems[1]);
+	answer2b.appendChild(text2b);
 	var answer2c = document.querySelector('#answer2c');
-	var textNode2 = document.createTextNode(specItems[2]);
-	answer2c.appendChild(textNode2);
-
-			// This used to be document.getElementById('answer2').innerHTML 
-			// but I changed it to figure out how to style auto-generated text from text nodes.
+	var text2c = document.createTextNode(specItems[2]);
+	answer2c.appendChild(text2c);
 
 //>>>-----------------------ANSWER 3----------------------->>>//
 
+	// Create a blank array to push filtered items into
 	var gbpCodeItems = [];
+	// Filter items that have 'GBP' string in currency_code
 	var filterItemTitle = items.filter(function (britishItem){
-			if (britishItem.currency_code === 'GBP')
+			if (britishItem.currency_code === 'GBP'){
+				// push the items into gbpCodeItems array
 				gbpCodeItems.push(britishItem);
+				return gbpCodeItems;
+			};
 	});
+	// Take title and price of item in gbpCodeItems array and make them show up on page.
 	document.getElementById('answer3').innerHTML = gbpCodeItems[0].title + ' costs' + ' &#163;' + gbpCodeItems[0].price;
 	
 //>>>-----------------------ANSWER 4----------------------->>>//
 
+	// Create a blank array to push filtered items into
 	var woodItems = [];
+	// Filter items that have 'wood' in materials array
 	var itemsWithWood = items.filter(function (woodItem){
-			if ((woodItem.materials.indexOf('wood')) != (-1))
-				woodItems.push(woodItem.title);
+		// Search each position of each materials array and find 'wood', which can't be -1
+			if ((woodItem.materials.indexOf('wood')) != (-1)){
+				// Push those items into woodItems array along with title and a string
+				woodItems.push(woodItem.title + ' is made of wood.');
+				return woodItems;
+			};
 	});
-	document.getElementById('answer4').innerHTML = woodItems[0] + ' is made of wood.' + '<p>' + woodItems[1] +
-		' is made of wood.' + '<p>' + woodItems[2] + 
-		' is made of wood.' + '<p>' + woodItems[3] + 
-		' is made of wood.' + '<p>' + woodItems[4] +
-		' is made of wood.';
+	// Make the titles and strings from the woodItems array show up on page
+	var answer4a = document.querySelector('#answer4a');
+	var text4a = document.createTextNode(woodItems[0]);
+	answer4a.appendChild(text4a);
+	var answer4b = document.querySelector('#answer4b');
+	var text4b = document.createTextNode(woodItems[1]);
+	answer4b.appendChild(text4b);
+	var answer4c = document.querySelector('#answer4c');
+	var text4c = document.createTextNode(woodItems[2]);
+	answer4c.appendChild(text4c);
+	var answer4d = document.querySelector('#answer4d');
+	var text4d = document.createTextNode(woodItems[3]);
+	answer4d.appendChild(text4c);
+	var answer4e = document.querySelector('#answer4e');
+	var text4e = document.createTextNode(woodItems[4]);
+	answer4e.appendChild(text4c);
+
 
 	//>>>-----------------------ANSWER 5----------------------->>>//
-
+	
+	// Create a blank array to push filtered items into
 	var multMaterialItems = [];
+	// Filter items with a materials array length greater than or equal to 8
 	var itemsWithMultMat = items.filter(function (mat){
-			if ((mat.materials.length) >= (8))
+			if ((mat.materials.length) >= (8)){
+				// push those items into multMaterialItems array
 				multMaterialItems.push(mat);
+				return multMaterialItems;
+			};
 	});
-	document.getElementById('answer5').innerHTML = 
-		multMaterialItems[0].title + ' has ' + multMaterialItems[0].materials.length + ' materials:' + '<p>'
-			+ multMaterialItems[0].materials[0] + '<br>' 
-			+ multMaterialItems[0].materials[1] + '<br>' 
-			+ multMaterialItems[0].materials[2] + '<br>' 
-			+ multMaterialItems[0].materials[3] + '<br>' 
-			+ multMaterialItems[0].materials[4] + '<br>' 
-			+ multMaterialItems[0].materials[5] + '<br>' 
-			+ multMaterialItems[0].materials[6] + '<br>' 
-			+ multMaterialItems[0].materials[7] + '<br>' 
-			+ multMaterialItems[0].materials[8] + '<p>' 
-		+ multMaterialItems[1].title + ' has ' + multMaterialItems[1].materials.length + ' materials:' + '<p>' 
-			+ multMaterialItems[1].materials[0] + '<br>'
-			+ multMaterialItems[1].materials[1] + '<br>'
-			+ multMaterialItems[1].materials[2] + '<br>'
-			+ multMaterialItems[1].materials[3] + '<br>'
-			+ multMaterialItems[1].materials[4] + '<br>'
-			+ multMaterialItems[1].materials[5] + '<br>'
-			+ multMaterialItems[1].materials[6] + '<br>'
-			+ multMaterialItems[1].materials[7] + '<br>'
-			+ multMaterialItems[1].materials[8] + '<br>'
-			+ multMaterialItems[1].materials[9] + '<br>'
-			+ multMaterialItems[1].materials[10] + '<br>'
-			+ multMaterialItems[1].materials[11] + '<br>'
-			+ multMaterialItems[1].materials[12] + '<br>';
+	// Make the title and material length show up on page
+	document.getElementById('answer5a').innerHTML = 
+		multMaterialItems[0].title + ' has ' + multMaterialItems[0].materials.length + ' materials:';
+			// Create a function that shows each material listed below the above sentence
+			var listAnswer5a = multMaterialItems[0].materials.filter(function (list1){
+				var answer5List1 = document.querySelector('#answer5aList');
+				var listElement = document.createElement('div');
+				listElement.textContent = list1;
+				answer5a.appendChild(listElement);
+			});
+
+	document.getElementById('answer5b').innerHTML = 
+		multMaterialItems[1].title + ' has ' + multMaterialItems[1].materials.length + ' materials:';
+			var listAnswer5b = multMaterialItems[1].materials.filter(function (list2){
+				var answer5List2 = document.querySelector('#answer5bList');
+				var listElement2 = document.createElement('div');
+				listElement2.textContent = list2;
+				answer5b.appendChild(listElement2);
+			});
 
 	//>>>-----------------------ANSWER 6----------------------->>>//
 
+	// Create a blank array to push filtered items into
 	var sellerItems = [];
+	// Filter items with 'i_did' string in who_made
 	var itemQuantity = items.filter(function(made){
-			if (made.who_made === "i_did")
+			if (made.who_made === 'i_did'){
+				// push those items into sellerItems array
 				sellerItems.push(made);
+				return sellerItems;
+			};
 	});
+	// Make length of items in sellerItems array show up on page
 	document.getElementById('answer6').innerHTML = sellerItems.length + ' were made by their sellers';
 
 }());
