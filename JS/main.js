@@ -127,7 +127,7 @@
 	answer4e.appendChild(text4c);
 
 
-	//>>>-----------------------ANSWER 5----------------------->>>//
+//>>>-----------------------ANSWER 5----------------------->>>//
 	
 	// Create a blank array to push filtered items into
 	var multMaterialItems = [];
@@ -159,7 +159,7 @@
 				answer5b.appendChild(listElement2);
 			});
 
-	//>>>-----------------------ANSWER 6----------------------->>>//
+//>>>-----------------------ANSWER 6----------------------->>>//
 
 	// Create a blank array to push filtered items into
 	var sellerItems = [];
