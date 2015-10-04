@@ -67,9 +67,9 @@
  			if ((filteredItem.price > 14.00) && (filteredItem.price < 18.00)){
  				// Push title of item into specItems array
  				specItems.push(filteredItem.title);
- 				return specItems;
  			};
- 	}); 			
+ 			return specItems;	
+ 	});
  	// Take items in specItems array and make them show up on page 
 	var answer2a = document.querySelector('#answer2a');
 	var text2a = document.createTextNode(specItems[0]);
@@ -90,8 +90,8 @@
 			if (britishItem.currency_code === 'GBP'){
 				// push the items into gbpCodeItems array
 				gbpCodeItems.push(britishItem);
-				return gbpCodeItems;
 			};
+			return gbpCodeItems;
 	});
 	// Take title and price of item in gbpCodeItems array and make them show up on page.
 	document.getElementById('answer3').innerHTML = gbpCodeItems[0].title + ' costs' + ' &#163;' + gbpCodeItems[0].price;
@@ -106,8 +106,8 @@
 			if ((woodItem.materials.indexOf('wood')) != (-1)){
 				// Push those items into woodItems array along with title and a string
 				woodItems.push(woodItem.title + ' is made of wood.');
-				return woodItems;
 			};
+			return woodItems;
 	});
 	// Make the titles and strings from the woodItems array show up on page
 	var answer4a = document.querySelector('#answer4a');
@@ -136,8 +136,8 @@
 			if ((mat.materials.length) >= (8)){
 				// push those items into multMaterialItems array
 				multMaterialItems.push(mat);
-				return multMaterialItems;
 			};
+			return multMaterialItems;
 	});
 	// Make the title and material length show up on page
 	document.getElementById('answer5a').innerHTML = 
@@ -168,8 +168,8 @@
 			if (made.who_made === 'i_did'){
 				// push those items into sellerItems array
 				sellerItems.push(made);
-				return sellerItems;
 			};
+			return sellerItems;
 	});
 	// Make length of items in sellerItems array show up on page
 	document.getElementById('answer6').innerHTML = sellerItems.length + ' were made by their sellers';
