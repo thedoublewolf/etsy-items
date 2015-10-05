@@ -121,10 +121,10 @@
 	answer4c.appendChild(text4c);
 	var answer4d = document.querySelector('#answer4d');
 	var text4d = document.createTextNode(woodItems[3]);
-	answer4d.appendChild(text4c);
+	answer4d.appendChild(text4d);
 	var answer4e = document.querySelector('#answer4e');
 	var text4e = document.createTextNode(woodItems[4]);
-	answer4e.appendChild(text4c);
+	answer4e.appendChild(text4e);
 
 
 //>>>-----------------------ANSWER 5----------------------->>>//
