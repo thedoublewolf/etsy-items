@@ -27,12 +27,8 @@
 //          (_______)(_______)(_______/|/      
 
 /////////////////////////MMXV JW./////////////////////////
-
                                              
 (function () { 
-
-	// Find container element to apply styles to answers.
-	var container = document.querySelector('#container');
 
 //>>>-----------------------ANSWER 1----------------------->>>//
 
@@ -125,7 +121,6 @@
 	var answer4e = document.querySelector('#answer4e');
 	var text4e = document.createTextNode(woodItems[4]);
 	answer4e.appendChild(text4e);
-
 
 //>>>-----------------------ANSWER 5----------------------->>>//
 	
